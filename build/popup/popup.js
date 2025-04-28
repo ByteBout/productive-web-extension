@@ -41,7 +41,11 @@ function updateSetting(platform, id, isChecked) {
             );
         }
 
-        chrome.storage.sync.set({ settings });
+        chrome.storage.sync.set({ settings }, () => {
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                sendSetting(tabs[0], platform, settings[platform]);
+            });
+        });
     });
 }
 
@@ -56,6 +60,16 @@ function loadSetting(platform) {
             });
         }
     });
+}
+
+function sendSetting(tab, platform, settings) {
+    // Send setting to content scripts
+    const message = {
+        platform: platform,
+        setting: settings,
+    };
+    console.log(message);
+    chrome.tabs.sendMessage(tab.id, message);
 }
 
 function loadYoutubeContent() {
