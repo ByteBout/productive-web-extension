@@ -50,9 +50,11 @@ function loadSetting(platform) {
     chrome.storage.sync.get(["settings"], (data) => {
         const settings = data.settings || {};
 
-        settings[platform].forEach((el) => {
-            document.getElementById(el).setAttribute("checked", "checked");
-        });
+        if (settings[platform]) {
+            settings[platform].forEach((el) => {
+                document.getElementById(el).setAttribute("checked", "checked");
+            });
+        }
     });
 }
 
