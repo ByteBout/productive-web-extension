@@ -11,6 +11,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const sld = parts.length > 2 ? parts[1] : parts[0];
 
         loadPopupContent(sld);
+        loadSetting(sld);
     } catch (error) {
         console.log(error);
     }
@@ -23,6 +24,36 @@ function loadPopupContent(sld) {
     };
 
     if (sld in supportedPlatforms) supportedPlatforms[sld]();
+}
+
+function updateSetting(platform, id, isChecked) {
+    // Update saved setting on browser storage
+    chrome.storage.sync.get(["settings"], (data) => {
+        const settings = data.settings || {};
+
+        if (!settings[platform]) settings[platform] = [];
+
+        if (isChecked) {
+            settings[platform].push(id);
+        } else {
+            settings[platform] = settings[platform].filter(
+                (item) => item !== id,
+            );
+        }
+
+        chrome.storage.sync.set({ settings });
+    });
+}
+
+function loadSetting(platform) {
+    // Load saved setting from browser storage
+    chrome.storage.sync.get(["settings"], (data) => {
+        const settings = data.settings || {};
+
+        settings[platform].forEach((el) => {
+            document.getElementById(el).setAttribute("checked", "checked");
+        });
+    });
 }
 
 function loadYoutubeContent() {
@@ -110,4 +141,11 @@ function loadYoutubeContent() {
                 </label>
             </fieldset>
     `;
+
+    document.addEventListener("change", (e) => {
+        const id = e.target.id;
+        const isChecked = e.target.checked;
+
+        updateSetting("youtube", id, isChecked);
+    });
 }
