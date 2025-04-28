@@ -4,26 +4,26 @@ const platformNameEl = document.querySelector("#platform-name");
 const unhookTabContentEl = document.querySelector("#unhook-tab-content");
 
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    // Check active tab URL and extract sld from it.
+    // Check active tab URL and extract platform name from it.
     try {
         const url = new URL(tabs[0].url).hostname;
         const parts = url.split(".");
-        const sld = parts.length > 2 ? parts[1] : parts[0];
+        const platform = parts.length > 2 ? parts[1] : parts[0];
 
-        loadPopupContent(sld);
-        loadSetting(sld);
+        loadPopupContent(platform);
+        loadSetting(platform);
     } catch (error) {
         console.log(error);
     }
 });
 
-function loadPopupContent(sld) {
+function loadPopupContent(platform) {
     // load popup content based on platform
     const supportedPlatforms = {
         youtube: loadYoutubeContent,
     };
 
-    if (sld in supportedPlatforms) supportedPlatforms[sld]();
+    if (platform in supportedPlatforms) supportedPlatforms[platform]();
 }
 
 function updateSetting(platform, id, isChecked) {
