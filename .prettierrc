@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        "prettier-plugin-tailwindcss"
+    ],
+    "tabWidth": 4,
+    "bracketSameLine": true,
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "printWidth": 800
+            }
+        },
+        {
+            "files": "*.js",
+            "options": {
+                "printWidth": 80
+            }
+        }
+    ]
+}

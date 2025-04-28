@@ -1,0 +1,21 @@
+{
+    "name": "ProductiveWeb",
+    "description": "Remove unwanted sections from popular social media & streaming platforms to regain focus and be more productive.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "./build/popup/popup.html"
+    },
+    "icons": {
+        "32": "./assets/extension_icons/icon32.png",
+        "48": "./assets/extension_icons/icon48.png",
+        "128": "./assets/extension_icons/icon128.png"
+    }
+}
