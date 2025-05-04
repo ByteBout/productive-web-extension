@@ -11,7 +11,6 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const platform = parts.length > 2 ? parts[1] : parts[0];
 
         loadPopupContent(platform);
-        loadSetting(platform);
     } catch (error) {
         console.log(error);
     }
@@ -164,4 +163,6 @@ function loadYoutubeContent() {
 
         updateSetting("youtube", id, isChecked);
     });
+
+    loadSetting("youtube");
 }
