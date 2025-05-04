@@ -20,6 +20,7 @@ function loadPopupContent(platform) {
     // load popup content based on platform
     const supportedPlatforms = {
         youtube: loadYoutubeContent,
+        twitch: loadTwitchContent,
     };
 
     if (platform in supportedPlatforms) supportedPlatforms[platform]();
@@ -169,4 +170,96 @@ function loadYoutubeContent() {
     });
 
     loadSetting("youtube");
+}
+
+function loadTwitchContent() {
+    platformLogoEl.src = "../../assets/images/twitch.png";
+    platformNameEl.textContent = "Twitch";
+
+    unhookTabContentEl.innerHTML = `
+            <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
+                <legend class="fieldset-legend">General</legend>
+                <label class="label flex justify-between px-2">
+                    Home Feed
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-feed" />
+                </label>
+            </fieldset>
+
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+                <legend class="fieldset-legend px-1">Navbar</legend>
+                <label class="label flex justify-between px-2">
+                    Browse
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-browse" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    prime
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-prime" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Notifications
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-notifications" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Whispers
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-whispers" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Bits
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-bits" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    Ad-Free
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-ad-free" />
+                </label>
+            </fieldset>
+
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+                <legend class="fieldset-legend px-1">Sidebar</legend>
+                <label class="label flex justify-between px-2">
+                    Stories
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-stories" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Followed Channels
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-followed-channels" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Live Channels
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-live-channels" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    Streamer Viewers Also Watch
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-also-watch" />
+                </label>
+            </fieldset>
+
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+                <legend class="fieldset-legend px-1">Stream Page</legend>
+                <label class="label flex justify-between px-2">
+                    Stream Info
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-stream-info" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    About
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-about" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Panel
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-panel" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    Chat
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-chat" />
+                </label>
+            </fieldset>
+    `;
+
+    document.addEventListener("change", (e) => {
+        const id = e.target.id;
+        const isChecked = e.target.checked;
+
+        updateSetting("twitch", id, isChecked);
+    });
+
+    loadSetting("twitch");
 }
