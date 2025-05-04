@@ -17,5 +17,16 @@
         "32": "./assets/extension_icons/icon32.png",
         "48": "./assets/extension_icons/icon48.png",
         "128": "./assets/extension_icons/icon128.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "js": [
+                "./scripts/content/youtube.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
 }
