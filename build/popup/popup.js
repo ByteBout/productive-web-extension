@@ -32,7 +32,7 @@ function updateSetting(platform, id, isChecked) {
 
         if (!settings[platform]) settings[platform] = [];
 
-        if (isChecked) {
+        if (isChecked && id) {
             settings[platform].push(id);
         } else {
             settings[platform] = settings[platform].filter(
@@ -55,7 +55,11 @@ function loadSetting(platform) {
 
         if (settings[platform]) {
             settings[platform].forEach((el) => {
-                document.getElementById(el).setAttribute("checked", "checked");
+                if (el && document.getElementById(el)) {
+                    document
+                        .getElementById(el)
+                        .setAttribute("checked", "checked");
+                }
             });
         }
     });
