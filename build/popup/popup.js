@@ -179,7 +179,7 @@ function loadTwitchContent() {
     unhookTabContentEl.innerHTML = `
             <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
                 <legend class="fieldset-legend">General</legend>
-                <label class="label flex justify-between px-2">
+                <label class="label mb-1.5 flex justify-between px-2">
                     Home Feed
                     <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-feed" />
                 </label>
