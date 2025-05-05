@@ -27,6 +27,15 @@
                 "./scripts/content/youtube.js"
             ],
             "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://*.twitch.tv/*"
+            ],
+            "js": [
+                "./scripts/content/twitch.js"
+            ],
+            "run_at": "document_start"
         }
     ]
 }
