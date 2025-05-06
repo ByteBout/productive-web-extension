@@ -16,13 +16,14 @@ const targetElements = {
     "hide-live-channels": [".side-nav-section[aria-label='Live Channels']"],
     "hide-also-watch": [".side-nav-section:nth-child(4)"],
     "hide-stream-info": ["#live-channel-stream-information"],
-    "hide-about": [".about-section__panel"],
+    "hide-about": [".about-section__panel", ".about-section__actions"],
     "hide-panel": [".channel-panels"],
     "hide-chat": [
         ".community-highlight-stack__card--wide",
         ".iWWhvN",
         ".fxCDlb",
         ".DGdsv",
+        "[data-a-target='chat-scroller']",
     ],
 };
 
