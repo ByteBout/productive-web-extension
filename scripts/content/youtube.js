@@ -42,108 +42,80 @@ const targetElements = {
 
 let cachedSettings = [];
 
-function debounce(func, wait) {
-    let timeout;
-    return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func.apply(context, args);
-        }, wait);
-    };
-}
-
-chrome.storage.sync.get(["settings"], (data) => {
-    if (data.settings && data.settings.youtube) {
-        cachedSettings = data.settings.youtube || [];
-    }
-});
-
-chrome.storage.onChanged.addListener((changes) => {
-    if (
-        changes.settings &&
-        changes.settings.newValue &&
-        changes.settings.newValue.youtube
-    ) {
-        cachedSettings = changes.settings.newValue.youtube || [];
-        applySetting(cachedSettings);
-    }
-});
-
-chrome.runtime.onMessage.addListener((message) => {
-    try {
-        if (message.platform === "youtube") {
-            const setting = message.setting || [];
-            cachedSettings = setting;
-            if (setting) applySetting(setting);
-        }
-    } catch (error) {
-        console.error(error);
-    }
-});
-
-function applySetting(setting) {
-    let styleSheet = document.getElementById("productive-web-styles");
+// Efficient setting application via CSS
+function applySetting(settingArray) {
+    const styleSheetId = "productive-web-styles";
+    let styleSheet = document.getElementById(styleSheetId);
     if (!styleSheet) {
         styleSheet = document.createElement("style");
-        styleSheet.id = "productive-web-styles";
+        styleSheet.id = styleSheetId;
         document.head.appendChild(styleSheet);
     }
 
+    const enabledSettings = new Set(settingArray);
     let cssRules = "";
 
     for (const id in targetElements) {
-        const selectors = targetElements[id];
-        if (setting.includes(id)) {
-            cssRules +=
-                selectors.join(", ") + " { display: none !important; }\n";
+        if (enabledSettings.has(id)) {
+            cssRules += `${targetElements[id].join(", ")} { display: none !important; }\n`;
         }
     }
 
     styleSheet.textContent = cssRules;
 }
 
-// Optimized mutation observer
+// Debounce utility
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
 const debouncedApplySettings = debounce(() => {
     applySetting(cachedSettings);
 }, 250);
 
-const observer = new MutationObserver((mutations) => {
-    let shouldUpdate = false;
-    for (let mutation of mutations) {
-        if (mutation.addedNodes.length > 0) {
-            for (const id in targetElements) {
-                const selectors = targetElements[id];
-                for (const selector of selectors) {
-                    if (
-                        selector.includes(
-                            mutation.target.tagName?.toLowerCase(),
-                        ) ||
-                        (mutation.target.classList &&
-                            selector.includes(
-                                Array.from(mutation.target.classList).join(""),
-                            ))
-                    ) {
-                        shouldUpdate = true;
-                        break;
-                    }
-                }
-                if (shouldUpdate) break;
-            }
-        }
-        if (shouldUpdate) break;
-    }
-
-    if (shouldUpdate) {
-        debouncedApplySettings();
+// Load stored settings
+chrome.storage.sync.get(["settings"], (data) => {
+    if (data.settings?.youtube) {
+        cachedSettings = data.settings.youtube;
+        applySetting(cachedSettings);
     }
 });
 
+// React to settings updates
+chrome.storage.onChanged.addListener((changes) => {
+    if (changes.settings?.newValue?.youtube) {
+        cachedSettings = changes.settings.newValue.youtube;
+        applySetting(cachedSettings);
+    }
+});
+
+// Handle messages
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.platform === "youtube") {
+        cachedSettings = message.setting || [];
+        applySetting(cachedSettings);
+    }
+});
+
+// Simplified DOM mutation observer
+const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+        if (mutation.addedNodes.length > 0) {
+            debouncedApplySettings();
+            break;
+        }
+    }
+});
+
+// Track page navigation changes
 function detectPageChange() {
     let lastUrl = location.href;
     return function () {
-        if (lastUrl !== location.href) {
+        if (location.href !== lastUrl) {
             lastUrl = location.href;
             return true;
         }
@@ -157,20 +129,19 @@ setInterval(() => {
     if (isPageChanged()) {
         debouncedApplySettings();
     }
-}, 500);
+}, 1500);
+
+// Observer start
+function startObserver() {
+    applySetting(cachedSettings);
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+}
 
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", startObserver);
 } else {
     startObserver();
-}
-
-function startObserver() {
-    applySetting(cachedSettings);
-
-    observer.observe(document.body, {
-        subtree: true,
-        childList: true,
-        attributes: false,
-    });
 }
