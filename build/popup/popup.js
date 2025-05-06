@@ -21,6 +21,7 @@ function loadPopupContent(platform) {
     const supportedPlatforms = {
         youtube: loadYoutubeContent,
         twitch: loadTwitchContent,
+        linkedin: loadLinkedinContent,
     };
 
     if (platform in supportedPlatforms) supportedPlatforms[platform]();
@@ -262,4 +263,76 @@ function loadTwitchContent() {
     });
 
     loadSetting("twitch");
+}
+
+function loadLinkedinContent() {
+    platformLogoEl.src = "../../assets/images/linkedin.png";
+    platformNameEl.textContent = "Linkedin";
+
+    unhookTabContentEl.innerHTML = `
+            <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
+                <legend class="fieldset-legend">General</legend>
+                <label class="label flex justify-between px-2">
+                    Home Feed
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-feed" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Premium Offers
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-premium" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Linkedin News
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-news" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    Messaging
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-messaging" />
+                </label>
+            </fieldset>
+
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+                <legend class="fieldset-legend px-1">Navbar</legend>
+                <label class="label flex justify-between px-2">
+                    Messaging
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-nav-messaging" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    Notifications
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-nav-notifications" />
+                </label>
+            </fieldset>
+
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+                <legend class="fieldset-legend px-1">Profile Page</legend>
+                <label class="label flex justify-between px-2">
+                    Suggested for you
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-suggest" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Analytics
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-followed-analytics" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    Viewers also viewed
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-live-also-view" />
+                </label>
+                <label class="label flex justify-between px-2">
+                    People May Know
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-may-know" />
+                </label>
+                <label class="label mb-1.5 flex justify-between px-2">
+                    You Might Like
+                    <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-might-like" />
+                </label>
+            </fieldset>
+    `;
+
+    document.addEventListener("change", (e) => {
+        const id = e.target.id;
+        const isChecked = e.target.checked;
+
+        updateSetting("linkedin", id, isChecked);
+    });
+
+    loadSetting("linkedin");
 }
