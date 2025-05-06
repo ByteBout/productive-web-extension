@@ -36,6 +36,15 @@
                 "./scripts/content/twitch.js"
             ],
             "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://*.linkedin.com/*"
+            ],
+            "js": [
+                "./scripts/content/linkedin.js"
+            ],
+            "run_at": "document_start"
         }
     ]
 }
