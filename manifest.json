@@ -1,6 +1,6 @@
 {
     "name": "ProductiveWeb",
-    "description": "Remove unwanted sections from popular social media & streaming platforms to regain focus and be more productive.",
+    "description": "Remove unwanted sections from popular web platforms to avoid distractions, regain focus, and stay productive.",
     "version": "1.0.0",
     "manifest_version": 3,
     "permissions": [
