@@ -78,8 +78,7 @@ function sendSetting(tab, platform, settings) {
 }
 
 function loadYoutubeContent() {
-    platformLogoEl.src = "../../assets/images/youtube.png";
-    platformNameEl.textContent = "Youtube";
+    platformLogoEl.src = "../../assets/platform_logos/youtube.png";
 
     unhookTabContentEl.innerHTML = `
             <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
@@ -174,8 +173,7 @@ function loadYoutubeContent() {
 }
 
 function loadTwitchContent() {
-    platformLogoEl.src = "../../assets/images/twitch.png";
-    platformNameEl.textContent = "Twitch";
+    platformLogoEl.src = "../../assets/platform_logos/twitch.png";
 
     unhookTabContentEl.innerHTML = `
             <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
@@ -266,8 +264,7 @@ function loadTwitchContent() {
 }
 
 function loadLinkedinContent() {
-    platformLogoEl.src = "../../assets/images/linkedin.png";
-    platformNameEl.textContent = "Linkedin";
+    platformLogoEl.src = "../../assets/platform_logos/linkedin.png";
 
     unhookTabContentEl.innerHTML = `
             <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
