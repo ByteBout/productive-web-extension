@@ -11,12 +11,12 @@
         "<all_urls>"
     ],
     "action": {
-        "default_popup": "./build/popup/popup.html"
+        "default_popup": "build/popup/popup.html"
     },
     "icons": {
-        "32": "./assets/extension_icons/icon32.png",
-        "48": "./assets/extension_icons/icon48.png",
-        "128": "./assets/extension_icons/icon128.png"
+        "32": "assets/extension_icons/icon32.png",
+        "48": "assets/extension_icons/icon48.png",
+        "128": "assets/extension_icons/icon128.png"
     },
     "content_scripts": [
         {
@@ -24,7 +24,7 @@
                 "https://*.youtube.com/*"
             ],
             "js": [
-                "./scripts/content/youtube.js"
+                "scripts/content/youtube.js"
             ],
             "run_at": "document_start"
         },
@@ -33,7 +33,7 @@
                 "https://*.twitch.tv/*"
             ],
             "js": [
-                "./scripts/content/twitch.js"
+                "scripts/content/twitch.js"
             ],
             "run_at": "document_start"
         },
@@ -42,7 +42,7 @@
                 "https://*.linkedin.com/*"
             ],
             "js": [
-                "./scripts/content/linkedin.js"
+                "scripts/content/linkedin.js"
             ],
             "run_at": "document_start"
         }
