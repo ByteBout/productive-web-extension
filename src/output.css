@@ -1310,6 +1310,11 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .alert-info {
+    border-color: var(--color-info);
+    color: var(--color-info-content);
+    --alert-color: var(--color-info);
+  }
   .alert-warning {
     border-color: var(--color-warning);
     color: var(--color-warning-content);
