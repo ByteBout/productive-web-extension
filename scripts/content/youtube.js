@@ -21,9 +21,15 @@ const targetElements = {
         ".ytd-companion-slot-renderer",
     ],
     "hide-notification": ["ytd-notification-topbar-button-renderer"],
-    "hide-subscriptions": [".ytd-guide-renderer:nth-child(2)"],
-    "hide-explore": [".ytd-guide-renderer:nth-child(3)"],
-    "hide-more-from-youtube": [".ytd-guide-renderer:nth-child(4)"],
+    "hide-subscriptions": [
+        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(2)",
+    ],
+    "hide-explore": [
+        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(3)",
+    ],
+    "hide-more-from-youtube": [
+        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(4)",
+    ],
     "hide-video-title": ["#title"],
     "hide-channel-info": ["#owner"],
     "hide-action-buttons": ["#actions"],
