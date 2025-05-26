@@ -44,6 +44,9 @@ const targetElements = {
     "hide-live-chat": ["#chat-container"],
     "hide-playlist": ["#playlist"],
     "hide-fundraise": ["#donation-shelf"],
+    "disable-autoplay": [],
+    "hide-video-cards": [".ytp-ce-video", ".ytp-ce-channel-this", ".ytp-ce-website"],
+    "hide-video-end": [".ytp-endscreen-content"],
 };
 
 let cachedSettings = [];
@@ -64,6 +67,24 @@ function applySetting(settingArray) {
     for (const id in targetElements) {
         if (enabledSettings.has(id)) {
             cssRules += `${targetElements[id].join(", ")} { display: none !important; }\n`;
+        }
+    }
+
+    // Disable auto play
+    const autoPlayEl = document.querySelector(".ytp-autonav-toggle-button");
+    if (autoPlayEl) {
+        const autoPlayStatus = autoPlayEl.getAttribute("aria-checked");
+
+        if (
+            enabledSettings.has("disable-autoplay") &&
+            autoPlayStatus === "true"
+        ) {
+            autoPlayEl.click();
+        } else if (
+            !enabledSettings.has("disable-autoplay") &&
+            autoPlayStatus === "false"
+        ) {
+            autoPlayEl.click();
         }
     }
 

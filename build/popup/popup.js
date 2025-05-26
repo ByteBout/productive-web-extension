@@ -123,6 +123,22 @@ function loadYoutubeContent() {
         </fieldset>
 
         <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+            <legend class="fieldset-legend px-1">Video</legend>
+            <label class="label flex justify-between px-2">
+                Disable Autoplay
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="disable-autoplay" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Video End Cards
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-video-cards" />
+            </label>
+            <label class="label mb-1.5 flex justify-between px-2">
+                Video End Recommendations
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-video-end" />
+            </label>
+        </fieldset>
+
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
             <legend class="fieldset-legend px-1">Video Page</legend>
             <label class="label flex justify-between px-2">
                 Title
