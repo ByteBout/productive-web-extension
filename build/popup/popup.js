@@ -299,8 +299,8 @@ function loadLinkedinContent() {
                 <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-premium" />
             </label>
             <label class="label flex justify-between px-2">
-                Linkedin News
-                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-news" />
+                Puzzle
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-puzzle" />
             </label>
             <label class="label mb-1.5 flex justify-between px-2">
                 Messaging
@@ -321,17 +321,17 @@ function loadLinkedinContent() {
         </fieldset>
 
         <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
-            <legend class="fieldset-legend px-1">Profile Page</legend>
+            <legend class="fieldset-legend px-1">Sidebar</legend>
             <label class="label flex justify-between px-2">
-                Suggested for you
-                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-suggest" />
+                Linkedin News
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-news" />
             </label>
             <label class="label flex justify-between px-2">
-                Analytics
-                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-followed-analytics" />
+                Add to Your Feed
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-add-feed" />
             </label>
             <label class="label flex justify-between px-2">
-                Viewers also viewed
+                Viewers Also Viewed
                 <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-live-also-view" />
             </label>
             <label class="label flex justify-between px-2">
@@ -341,6 +341,18 @@ function loadLinkedinContent() {
             <label class="label mb-1.5 flex justify-between px-2">
                 You Might Like
                 <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-might-like" />
+            </label>
+        </fieldset>
+
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+            <legend class="fieldset-legend px-1">Profile Page</legend>
+            <label class="label flex justify-between px-2">
+                Suggested for You
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-suggest" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Analytics
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-followed-analytics" />
             </label>
         </fieldset>
     `;

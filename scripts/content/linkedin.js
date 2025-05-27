@@ -2,6 +2,7 @@ const targetElements = {
     "hide-feed": [
         ".scaffold-finite-scroll:has(.scaffold-finite-scroll__content[data-finite-scroll-hotkey-context='FEED'])",
         ".feed-new-update-pill__new-update-button",
+        ".artdeco-dropdown__trigger:has([aria-label='Sort order dropdown button'])",
     ],
     "hide-premium": [
         ".artdeco-card:has(.feed-identity-module__anchored-widget--premium-upsell)",
@@ -14,11 +15,13 @@ const targetElements = {
         "li:has(.jobs-home-upsell-card__container)",
         ".pv-profile-card:has(#premium_browsemap_recommendation)",
         ".artdeco-card:has(.member-analytics-addon-card-list__upsell-card-container)",
+        ".jobs-home-scalable-nav__nav-item:has(.jobshome_nav_insights_hub)",
     ],
     "hide-news": ["[data-view-name='news-module']"],
     "hide-messaging": [
         ".msg-overlay-list-bubble--is-minimized",
         "[data-view-name='messaging-overlay-maximize-connection-list-bar']",
+        ".msg-overlay-list-bubble",
     ],
     "hide-nav-messaging": [
         ".global-nav__primary-item:has(a[href='https://www.linkedin.com/messaging/?'])",
@@ -27,6 +30,7 @@ const targetElements = {
     "hide-nav-notifications": [
         ".global-nav__primary-item:has(a[href='https://www.linkedin.com/notifications/?'])",
         "[data-view-name='navigation-notifications']",
+        ".global-nav__primary-item:has(a[href='https://www.linkedin.com/notifications/?filter=all&refresh=true'])",
     ],
     "hide-suggest": [".pv-profile-card:has(#guidance)"],
     "hide-followed-analytics": [".pv-profile-card:has(#insights)"],
@@ -42,6 +46,11 @@ const targetElements = {
         ".pv-profile-card:has(#company_recommendation)",
         ".pv-profile-card:has(#newsletter_recommendation)",
         ".pv-profile-card:has(#learning_recommendation)",
+    ],
+    "hide-add-feed": [".feed-follows-module"],
+    "hide-puzzle": [
+        ".artdeco-card:has(.games-entrypoints-module__subheader)",
+        ".e20f3f3c:has(a[href='https://www.linkedin.com/games/zip/'])",
     ],
 };
 
