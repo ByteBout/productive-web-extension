@@ -1,7 +1,7 @@
 {
     "name": "ProductiveWeb",
-    "description": "Remove unwanted sections from popular web platforms to avoid distractions, regain focus, and stay productive.",
-    "version": "1.0.0",
+    "description": "Hide distractions like feeds, recommendations, sidebars, and comments across leading platforms in one click.",
+    "version": "1.0.1",
     "manifest_version": 3,
     "permissions": [
         "tabs",
