@@ -16,8 +16,7 @@ This browser extension was built to remove/unhook unwanted sections from leading
 * Kick
 
 ## Download Extension
-<a href="https://chromewebstore.google.com/detail/productiveweb/jpokfglcpofnjckphfiodocbppgeellg" target="_blank">
-  Chrome & Chromium based
+<a href="https://chromewebstore.google.com/detail/productiveweb/jpokfglcpofnjckphfiodocbppgeellg">
   <img src="https://productiveweb.co/assets/chrome.png" width="45px" height="45px">
 </a>
 
