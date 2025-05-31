@@ -1,7 +1,7 @@
 {
     "name": "ProductiveWeb",
     "description": "Hide distractions like feeds, recommendations, sidebars, and comments across leading platforms in one click.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "manifest_version": 3,
     "permissions": [
         "tabs",
