@@ -23,6 +23,7 @@ const targetElements = {
     "hide-notification": ["ytd-notification-topbar-button-renderer"],
     "hide-subscriptions": [
         ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(2)",
+        "#endpoint[title='Subscriptions']",
     ],
     "hide-explore": [
         ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(3)",
@@ -45,7 +46,11 @@ const targetElements = {
     "hide-playlist": ["#playlist"],
     "hide-fundraise": ["#donation-shelf"],
     "disable-autoplay": [],
-    "hide-video-cards": [".ytp-ce-video", ".ytp-ce-channel-this", ".ytp-ce-website"],
+    "hide-video-cards": [
+        ".ytp-ce-video",
+        ".ytp-ce-channel-this",
+        ".ytp-ce-website",
+    ],
     "hide-video-end": [".ytp-endscreen-content"],
 };
 
