@@ -3,27 +3,38 @@ const targetElements = {
         "[data-a-target='front-page-carousel']",
         "#front-page-main-content",
     ],
-    "hide-browse": [".jDgJoG:nth-child(2)"],
+    "hide-browse": [
+        ".top-nav__menu :nth-child(1) div:nth-child(3) div :nth-child(2)",
+    ],
     "hide-prime": [".top-nav__prime"],
-    "hide-notifications": [".czRfnU:has(.onsite-notifications)"],
-    "hide-whispers": [".czRfnU:has(.cafndC)"],
-    "hide-bits": [".czRfnU:has(.ceSMVf)"],
-    "hide-ad-free": [".czRfnU:nth-child(6)", ".turbo-sda-upsell-content"],
-    "hide-stories": [".storiesLeftNavSection--csO9S"],
+    "hide-notifications": ["div:has(> .onsite-notifications)"],
+    "hide-whispers": [
+        ".top-nav__menu :nth-child(3) .Layout-sc-1xcs6mc-0:has([aria-label='Whispers'])",
+    ],
+    "hide-bits": [
+        ".top-nav__menu :nth-child(3) .Layout-sc-1xcs6mc-0:has([aria-label='Get Bits'])",
+    ],
+    "hide-ad-free": [
+        ".ScCoreButton-sc-ocjdkq-0:has(div[data-a-selector='tw-core-button-icon'])",
+        ".turbo-sda-upsell-content",
+    ],
+    "hide-stories": [
+        ".storiesLeftNavSection--csO9S:has(div[aria-label='Open stories'])",
+    ],
     "hide-followed-channels": [
         ".side-nav-section[aria-label='Followed Channels']",
     ],
     "hide-live-channels": [".side-nav-section[aria-label='Live Channels']"],
-    "hide-also-watch": [".side-nav-section:nth-child(4)"],
+    "hide-also-watch": [".side-nav-section:last-child"],
     "hide-stream-info": ["#live-channel-stream-information"],
     "hide-about": [".about-section__panel", ".about-section__actions"],
     "hide-panel": [".channel-panels"],
     "hide-chat": [
         ".community-highlight-stack__card--wide",
-        ".iWWhvN",
-        ".fxCDlb",
-        ".DGdsv",
+        ".marquee-animation:has(.marquee-animation__original)",
+        ".marquee-animation:has(.marquee-animation__wrap-view)",
         "[data-a-target='chat-scroller']",
+        "button:has(> .channel-leaderboard-header-rotating__users)",
     ],
 };
 
