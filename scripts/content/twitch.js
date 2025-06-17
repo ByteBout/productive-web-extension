@@ -35,6 +35,8 @@ const targetElements = {
         ".marquee-animation:has(.marquee-animation__wrap-view)",
         "[data-a-target='chat-scroller']",
         "button:has(> .channel-leaderboard-header-rotating__users)",
+        ".channel-leaderboard-header-rotating__users",
+        ".video-chat__message-list-wrapper"
     ],
 };
 
