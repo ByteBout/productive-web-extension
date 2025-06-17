@@ -16,6 +16,7 @@ const targetElements = {
         ".pv-profile-card:has(#premium_browsemap_recommendation)",
         ".artdeco-card:has(.member-analytics-addon-card-list__upsell-card-container)",
         ".jobs-home-scalable-nav__nav-item:has(.jobshome_nav_insights_hub)",
+        ".global-nav__secondary-premium-anchor",
     ],
     "hide-news": ["[data-view-name='news-module']"],
     "hide-messaging": [
