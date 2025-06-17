@@ -8,12 +8,12 @@
     </head>
     <body class="flex h-[35rem] w-96 flex-col items-center p-1">
         <!-- Platform Information -->
-        <div class="border-base-300 rounded-box flex h-15 w-full flex-row items-center justify-center border">
+        <div class="border-base-300 rounded-box mb-1 flex h-15 w-full flex-row items-center justify-center border">
             <img src="../../assets/logo.png" alt="Platform Logo" class="w-14" id="platform-logo" />
         </div>
 
         <!-- Tabs -->
-        <div class="tabs tabs-lift tabs-sm my-1 flex h-[29rem] w-full justify-center overflow-hidden pb-8">
+        <div class="tabs tabs-lift tabs-sm mb-1 flex h-[29rem] w-full justify-center overflow-hidden">
             <!-- Unhook Tab -->
             <label class="tab">
                 <input type="radio" name="my_tabs_4" checked="checked" />
@@ -23,24 +23,24 @@
                 </svg>
                 Unhook
             </label>
-            <div class="tab-content bg-base-100 border-base-300 overflow-y-auto px-2 py-6 [scrollbar-gutter:stable_both-edges]" id="unhook-tab-content">
+            <div class="tab-content bg-base-100 border-base-300 rounded-box overflow-y-auto px-2 py-6 [scrollbar-gutter:stable_both-edges]" id="unhook-tab-content">
                 <div role="alert" class="alert alert-warning">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                     <span>This site isn't supported.</span>
                 </div>
-                <div class="border-base-300 rounded-box mt-2 w-full border p-3">
-                    <p class="text-base font-semibold">Supported Platforms!</p>
-                    <div class="mt-2 flex w-full flex-wrap items-center justify-center">
-                        <img src="/assets/platform_logos/youtube.png" alt="YouTube Logo" class="h-10 w-10" />
-                        <img src="/assets/platform_logos/linkedin.png" alt="Linkedin Logo" class="ml-0.5 h-10 w-10" />
-                        <img src="/assets/platform_logos/twitch.png" alt="Twitch Logo" class="-ml-1.5 h-10 w-10" />
-                        <img src="/assets/platform_logos/x.png" alt="X Logo" class="-ml-1 h-10 w-10 opacity-50" />
-                        <img src="/assets/platform_logos/instagram.png" alt="Instagram Logo" class="-ml-0.5 h-10 w-10 opacity-50" />
-                        <img src="/assets/platform_logos/facebook.png" alt="Facebook Logo" class="-ml-1.5 h-10 w-10 opacity-50" />
-                        <img src="/assets/platform_logos/tiktok.png" alt="Tiktok Logo" class="-ml-2 h-10 w-10 opacity-50" />
-                        <img src="/assets/platform_logos/kick.png" alt="Kick Logo" class="-ml-1.5 h-10 w-10 opacity-50" />
+                <div class="border-base-300 rounded-box mt-2 flex w-full flex-col items-center justify-center border px-4 py-2">
+                    <p class="text-sm font-medium">Supported Platforms</p>
+                    <div class="mt-1.5 flex w-full items-center justify-center">
+                        <img src="/assets/platform_logos/youtube.png" alt="YouTube Logo" class="h-7 w-7" />
+                        <img src="/assets/platform_logos/linkedin.png" alt="Linkedin Logo" class="ml-0.5 h-7 w-7" />
+                        <img src="/assets/platform_logos/twitch.png" alt="Twitch Logo" class="-ml-1 h-7 w-7" />
+                        <img src="/assets/platform_logos/x.png" alt="X Logo" class="-ml-1 h-7 w-7 opacity-50" />
+                        <img src="/assets/platform_logos/instagram.png" alt="Instagram Logo" class="relative z-20 -ml-0.5 h-7 w-7 opacity-50" />
+                        <img src="/assets/platform_logos/facebook.png" alt="Facebook Logo" class="-ml-1.5 h-7 w-7 opacity-50" />
+                        <img src="/assets/platform_logos/tiktok.png" alt="Tiktok Logo" class="-ml-2 h-7 w-7 opacity-50" />
+                        <img src="/assets/platform_logos/kick.png" alt="Kick Logo" class="-ml-1.5 h-7 w-7 opacity-50" />
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         </div>
 
         <!-- Links -->
-        <div class="border-base-300 rounded-box mt-auto flex h-10 w-full flex-row items-center justify-center space-x-2 border">
+        <div class="border-base-300 rounded-box flex h-10 w-full flex-row items-center justify-center space-x-2 border">
             <!-- Website Link -->
             <a href="https://productiveweb.co" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="#9FB9D0">
