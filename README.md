@@ -26,7 +26,7 @@ This browser extension was built to remove/unhook unwanted sections from leading
 ```
 git clone https://github.com/ByteBout/productive-web-extension.git
 ```
-2. Go to the project directory and run this code to install all necessary packages
+2. Go to the project directory and run the command to install all necessary packages
 ```
 npm install
 ```
