@@ -14,7 +14,7 @@ const targetElements = {
     "hide-bits": [
         ".top-nav__menu :nth-child(3) .Layout-sc-1xcs6mc-0:has([aria-label='Get Bits'])",
     ],
-    "hide-ad-free": [
+    "hide-subscribe": [
         ".ScCoreButton-sc-ocjdkq-0:has(div[data-a-selector='tw-core-button-icon'])",
         ".turbo-sda-upsell-content",
     ],
@@ -25,6 +25,7 @@ const targetElements = {
         ".side-nav-section[aria-label='Followed Channels']",
     ],
     "hide-live-channels": [".side-nav-section[aria-label='Live Channels']"],
+    "hide-rec-categories": [".side-nav-section[aria-label='Recommended Categories']"],
     "hide-also-watch": [".side-nav-section:last-child"],
     "hide-stream-info": ["#live-channel-stream-information"],
     "hide-about": [".about-section__panel", ".about-section__actions"],

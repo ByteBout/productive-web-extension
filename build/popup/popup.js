@@ -228,8 +228,8 @@ function loadTwitchContent() {
                 <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-bits" />
             </label>
             <label class="label mb-1.5 flex justify-between px-2">
-                Ad-Free
-                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-ad-free" />
+                Subscribe
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-subscribe" />
             </label>
         </fieldset>
 
@@ -246,6 +246,10 @@ function loadTwitchContent() {
             <label class="label flex justify-between px-2">
                 Live Channels
                 <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-live-channels" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Recommended Categories
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-rec-categories" />
             </label>
             <label class="label mb-1.5 flex justify-between px-2">
                 Streamer Viewers Also Watch
