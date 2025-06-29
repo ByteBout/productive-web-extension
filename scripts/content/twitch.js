@@ -26,7 +26,7 @@ const targetElements = {
     ],
     "hide-live-channels": [".side-nav-section[aria-label='Live Channels']"],
     "hide-rec-categories": [".side-nav-section[aria-label='Recommended Categories']"],
-    "hide-also-watch": [".side-nav-section:last-child"],
+    "hide-also-watch": [".side-nav-section[aria-label*='Viewers Also Watch']"],
     "hide-stream-info": ["#live-channel-stream-information"],
     "hide-about": [".about-section__panel", ".about-section__actions"],
     "hide-panel": [".channel-panels"],
