@@ -13,6 +13,7 @@ const targetElements = {
         "ytd-video-renderer:has(.badge-style-type-shorts)",
         ".badge-style-type-shorts",
         "[is-shorts-grid]",
+        "grid-shelf-view-model"
     ],
     "hide-ads": [
         ".ytd-ad-slot-renderer",
