@@ -23,14 +23,14 @@ const targetElements = {
     ],
     "hide-notification": ["ytd-notification-topbar-button-renderer"],
     "hide-subscriptions": [
-        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(2)",
+        "#guide-renderer > div > ytd-guide-section-renderer:nth-last-child(4)",
         "#endpoint[title='Subscriptions']",
     ],
     "hide-explore": [
-        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(3)",
+        "#guide-renderer > div > ytd-guide-section-renderer:nth-last-child(3)",
     ],
     "hide-more-from-youtube": [
-        ".ytd-guide-renderer:has(.ytd-guide-section-renderer):has(#guide-section-title):nth-child(4)",
+        "#guide-renderer > div > ytd-guide-section-renderer:nth-last-child(2)",
     ],
     "hide-video-title": ["#title"],
     "hide-channel-info": ["#owner"],
