@@ -1,7 +1,7 @@
 {
     "name": "ProductiveWeb",
     "description": "Hide/Unhook distractions like feeds, recommendations, sidebars, and comments across leading platforms in one click.",
-    "version": "1.0.4",
+    "version": "1.1.4",
     "manifest_version": 3,
     "permissions": [
         "tabs",
@@ -43,6 +43,15 @@
             ],
             "js": [
                 "scripts/content/linkedin.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://*.x.com/*"
+            ],
+            "js": [
+                "scripts/content/x.js"
             ],
             "run_at": "document_start"
         }
