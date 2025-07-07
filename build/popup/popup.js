@@ -375,13 +375,59 @@ function loadXContent() {
     platformLogoEl.src = "../../assets/platform_logos/x.png";
 
     unhookTabContentEl.innerHTML = `
-        <div role="alert" class="alert alert-info">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 shrink-0 stroke-current">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>X will be available soon.</span>
-        </div>
+        <fieldset class="fieldset bg-base-200 rounded-box border-base-300 -mt-3 mr-2 w-full border px-4 py-2.5">
+            <legend class="fieldset-legend">General</legend>
+            <label class="label flex justify-between px-2">
+                Feed
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-feed" />
+            </label>            
+            <label class="label flex justify-between px-2">
+                What's happening
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-happening" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Who to follow
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-who-follow" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Premium Offers
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-premium" />
+            </label>
+            <label class="label mb-1.5 flex justify-between px-2">
+                Grok
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-grok" />
+            </label>
+        </fieldset>
+
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-full border px-4 py-2.5">
+            <legend class="fieldset-legend">Sidebar</legend>
+            <label class="label flex justify-between px-2">
+                Explore
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-explore" />
+            </label>            
+            <label class="label flex justify-between px-2">
+                Notifications
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-notif" />
+            </label>
+            <label class="label flex justify-between px-2">
+                Messages
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-messages" />
+            </label>
+            <label class="label mb-1.5 flex justify-between px-2">
+                Communities
+                <input type="checkbox" class="toggle toggle-primary toggle-sm" id="hide-communities" />
+            </label>
+        </fieldset>
     `;
+
+    document.addEventListener("change", (e) => {
+        const id = e.target.id;
+        const isChecked = e.target.checked;
+
+        updateSetting("x", id, isChecked);
+    });
+
+    loadSetting("x");
 }
 
 function loadKickContent() {
