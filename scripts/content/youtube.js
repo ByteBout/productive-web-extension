@@ -32,7 +32,7 @@ const targetElements = {
     "hide-more-from-youtube": [
         "#guide-renderer > div > ytd-guide-section-renderer:nth-last-child(2)",
     ],
-    "hide-video-title": ["#title"],
+    "hide-video-title": ["#above-the-fold > #title"],
     "hide-channel-info": ["#owner"],
     "hide-action-buttons": ["#actions"],
     "hide-description": ["#description"],
