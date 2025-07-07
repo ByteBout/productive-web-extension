@@ -7,9 +7,9 @@ This browser extension was built to remove/unhook unwanted sections from leading
 * Youtube
 * Linkedin
 * Twitch
+* X
 
 #### Upcoming platforms
-* X
 * Instagram
 * Facebook
 * Tiktok
