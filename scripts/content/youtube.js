@@ -78,7 +78,9 @@ function applySetting(settingArray) {
 
     // Disable auto play
     const autoPlayEl = document.querySelector(".ytp-autonav-toggle-button");
-    if (autoPlayEl) {
+    const url = window.location.href
+
+    if (autoPlayEl && url.includes("youtube.com/watch")) {
         const autoPlayStatus = autoPlayEl.getAttribute("aria-checked");
 
         if (
