@@ -17,7 +17,7 @@ This browser extension was built to remove/unhook unwanted sections from leading
 
 ## Download Extension
 <a href="https://chromewebstore.google.com/detail/productiveweb/jpokfglcpofnjckphfiodocbppgeellg">
-  <img src="https://productiveweb.co/assets/chrome.png" width="45px" height="45px">
+  <img src="https://productiveweb.co/assets/chrome.webp" width="45px" height="45px">
 </a>
 
 ## How to contribute?
