@@ -10,6 +10,7 @@ const targetElements = {
         "[aria-label='Verified Orgs']",
         "[data-testid='super-upsell-UpsellButtonRenderProperties']",
         ".inlinePrompt",
+        "[data-testid='super-upsell-UpsellCardRenderProperties']",
     ],
     "hide-grok": [
         "[aria-label='Grok']",
